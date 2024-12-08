@@ -2,7 +2,7 @@ import { Container } from "./styles";
 import moutiasaad from "../../assets/photo.png";
 import springboot from "../../assets/spring-boot.svg";
 import flutter from "../../assets/flutter.svg";
-import shopify from "../../assets/shopify.svg";
+import django from "../../assets/django.svg";
 import htmlIcon from "../../assets/html-icon.svg";
 import cssIcon from "../../assets/css-icon.svg";
 import jsIcon from "../../assets/js-icon.svg";
@@ -43,11 +43,6 @@ export function About() {
             </ScrollAnimation>
           </div>
           <div className="hability">
-            <ScrollAnimation animateIn="fadeInUp" delay={0.12 * 1000}>
-              <img src={springboot} alt="springboot" />
-            </ScrollAnimation>
-          </div>
-          <div className="hability">
             <ScrollAnimation animateIn="fadeInUp" delay={0.13 * 1000}>
               <img src={reactIcon} alt="React" />
             </ScrollAnimation>
@@ -65,6 +60,16 @@ export function About() {
           <div className="hability">
             <ScrollAnimation animateIn="fadeInUp" delay={0.16 * 1000}>
               <img src={nodeIcon} alt="Node" />
+            </ScrollAnimation>
+          </div>
+          <div className="hability">
+            <ScrollAnimation animateIn="fadeInUp" delay={0.12 * 1000}>
+              <img src={springboot} alt="springboot" />
+            </ScrollAnimation>
+          </div>
+          <div className="hability">
+            <ScrollAnimation animateIn="fadeInUp" delay={0.12 * 1000}>
+              <img src={django} alt="django" />
             </ScrollAnimation>
           </div>
           <div className="hability">

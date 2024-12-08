@@ -4,8 +4,10 @@ import { Hero } from "../Hero/Hero";
 import { About } from "../About/About";
 import { Contact } from "../Contact/Contact";
 import { Project } from "../Project/Project";
-import wordpress from "../../assets/wordpress.svg";
-import shopify from "../../assets/shopify.svg";
+import springboot from "../../assets/spring-boot.svg";
+import flutter from "../../assets/flutter.svg";
+import django from "../../assets/django.svg";
+import angular from "../../assets/angular.svg";
 import htmlIcon from "../../assets/html-icon.svg";
 import cssIcon from "../../assets/css-icon.svg";
 import sassIcon from "../../assets/sass-icon.svg";
@@ -159,12 +161,22 @@ export function Main() {
                   "height": 20
                 },
                 {
-                  "src": wordpress,
+                  "src": flutter,
                   "width": 20,
                   "height": 20
                 },
                 {
-                  "src": shopify,
+                  "src": springboot,
+                  "width": 20,
+                  "height": 20
+                },
+                {
+                  "src": django,
+                  "width": 20,
+                  "height": 20
+                },
+                {
+                  "src": angular,
                   "width": 20,
                   "height": 20
                 },
