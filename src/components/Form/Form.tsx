@@ -20,18 +20,19 @@ export function Form() {
   useEffect(() => {
     if (state.succeeded) {
       toast.success('Email successfully sent!', {
-        position: toast.POSITION.BOTTOM_LEFT,
+        position: toast.POSITION.TOP_CENTER, // Center at the top
         pauseOnFocusLoss: false,
         closeOnClick: true,
         hideProgressBar: false,
         toastId: 'succeeded',
         style: {
-          fontSize: '12px',
-          padding: '10px',
-          width: '200px',
-          height: 'auto',
+          fontSize: '12px', // Adjust the text size for smaller toast
+          padding: '10px',  // Adjust padding to make it more compact
+          width: '200px',   // Adjust width for a smaller toast
+          textAlign: 'center', // Align text to the center
         },
-      });      
+      });
+          
     }
   })
   if (state.succeeded) {
