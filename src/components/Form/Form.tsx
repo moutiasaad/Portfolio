@@ -25,7 +25,13 @@ export function Form() {
         closeOnClick: true,
         hideProgressBar: false,
         toastId: 'succeeded',
-      })
+        style: {
+          fontSize: '12px',
+          padding: '10px',
+          width: '200px',
+          height: 'auto',
+        },
+      });      
     }
   })
   if (state.succeeded) {
