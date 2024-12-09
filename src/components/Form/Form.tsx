@@ -1,55 +1,60 @@
-import { Container, ContainerSucces } from './styles'
-import { useForm, ValidationError } from '@formspree/react'
-import { toast, ToastContainer } from 'react-toastify'
-import ReCAPTCHA from 'react-google-recaptcha'
-import { useEffect, useState } from 'react'
-import validator from 'validator'
+import { Container, ContainerSucces } from './styles';
+import { useForm, ValidationError } from '@formspree/react';
+import { toast, ToastContainer } from 'react-toastify';
+import ReCAPTCHA from 'react-google-recaptcha';
+import { useEffect, useState } from 'react';
+import validator from 'validator';
 
 export function Form() {
-  const [state, handleSubmit] = useForm('manyzoea')
-  const [validEmail, setValidEmail] = useState(false)
-  const [isHuman, setIsHuman] = useState(false)
-  const [message, setMessage] = useState('')
-  function verifyEmail(email: string) {
+  const [state, handleSubmit] = useForm('manyzoea');
+  const [validEmail, setValidEmail] = useState(false);
+  const [isHuman, setIsHuman] = useState(false);
+  const [message, setMessage] = useState('');
+
+  function verifyEmail(email:string) {
     if (validator.isEmail(email)) {
-      setValidEmail(true)
+      setValidEmail(true);
     } else {
-      setValidEmail(false)
+      setValidEmail(false);
     }
   }
+
   useEffect(() => {
     if (state.succeeded) {
       toast.success('Email successfully sent!', {
-        position: toast.POSITION.TOP_CENTER, // Center at the top
+        position: toast.POSITION.BOTTOM_CENTER, // Center at the top
         pauseOnFocusLoss: false,
         closeOnClick: true,
         hideProgressBar: false,
         toastId: 'succeeded',
         style: {
-          fontSize: '12px', // Adjust the text size for smaller toast
-          padding: '10px',  // Adjust padding to make it more compact
-          width: '200px',   // Adjust width for a smaller toast
-          textAlign: 'center', // Align text to the center
+          fontSize: '14px', // Adjust font size
+          padding: '15px',  // Adjust padding
+          width: '300px',   // Adjust width
+          textAlign: 'center', // Center align text
+          marginTop: '20px', // Add space from the top
+          borderRadius: '10px', // Add rounded corners
         },
       });
-          
     }
-  })
+  }, [state.succeeded]);
+
   if (state.succeeded) {
     return (
       <ContainerSucces>
         <h3>Thanks for getting in touch!</h3>
         <button
           onClick={() => {
-            window.scrollTo({ top: 0, behavior: 'smooth' })
+            window.scrollTo({ top: 0, behavior: 'smooth' });
           }}
         >
           Back to the top
         </button>
-        <ToastContainer />
+        <ToastContainer  />
       </ContainerSucces>
-    )
+    );
   }
+
   return (
     <Container>
       <h2>Get in touch using the form</h2>
@@ -60,7 +65,7 @@ export function Form() {
           type="email"
           name="email"
           onChange={(e) => {
-            verifyEmail(e.target.value)
+            verifyEmail(e.target.value);
           }}
           required
         />
@@ -71,7 +76,7 @@ export function Form() {
           id="message"
           name="message"
           onChange={(e) => {
-            setMessage(e.target.value)
+            setMessage(e.target.value);
           }}
         />
         <ValidationError
@@ -79,22 +84,23 @@ export function Form() {
           field="message"
           errors={state.errors}
         />
+        {/* Uncomment if you want ReCAPTCHA */}
         {/* <ReCAPTCHA
           sitekey="6LcItJYqAAAAAFK3gcd6LJYpErjAZ3MDyZYPw5"
-          onChange={(e) => {
-            setIsHuman(true)
+          onChange={() => {
+            setIsHuman(true);
           }}
-        ></ReCAPTCHA> */}
+        /> */}
         <button
           type="submit"
-          disabled={state.submitting || !validEmail || !message 
-            // || !isHuman
-          }
+          disabled={state.submitting || !validEmail || !message}
         >
           Submit
         </button>
       </form>
-      <ToastContainer />
+      <ToastContainer
+        style={{ zIndex: 9999 }} // Ensure it's above other elements
+      />
     </Container>
-  )
+  );
 }
