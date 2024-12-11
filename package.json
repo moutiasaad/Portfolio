@@ -11,6 +11,7 @@
     "@types/node": "^16.7.13",
     "@types/react": "^17.0.20",
     "@types/react-dom": "^17.0.9",
+    "@vercel/analytics": "^1.4.1",
     "portfolio": "file:",
     "react": "^16.14.0",
     "react-animate-on-scroll": "^2.1.5",
@@ -24,6 +25,7 @@
     "styled-components": "^5.3.3",
     "typescript": "^4.4.2",
     "validator": "^13.7.0",
+    "vercel": "^39.2.0",
     "web-vitals": "^2.1.0"
   },
   "scripts": {
