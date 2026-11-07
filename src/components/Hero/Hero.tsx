@@ -19,10 +19,10 @@ export function Hero() {
           <h1>Moutia Bensaad</h1>
         </ScrollAnimation>
         <ScrollAnimation animateIn="fadeInUp" delay={0.4 * 1000}>
-          <h3>Full Stack Developer</h3>
+          <h3>Embedded Systems & IoT Developer</h3>
         </ScrollAnimation>
         <ScrollAnimation animateIn="fadeInUp" delay={0.6 * 1000}>
-          <p className="small-resume">4 Years of Experience</p>
+          <p className="small-resume">Professional Master's in Embedded & Mobile Systems · IoT · Machine Learning · Full Stack</p>
         </ScrollAnimation>
         <ScrollAnimation animateIn="fadeInUp" delay={0.8 * 1000}>
           <BrowserRouter>
@@ -31,7 +31,7 @@ export function Hero() {
         </ScrollAnimation>
         <ScrollAnimation animateIn="fadeInUp" delay={1 * 1000}>
       <div className="social-media"><a
-        href="https://www.linkedin.com/in/moutia-saad-a0930a229/"
+        href="https://www.linkedin.com/in/moutia-bensaad-a0930a229/"
         target="_blank"
         rel="noreferrer"
       >
