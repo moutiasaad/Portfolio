@@ -4,7 +4,7 @@ import ScrollAnimation from "react-animate-on-scroll";
 import predictiveMaintenance from "../../assets/projects/predictive_maintenance.png"
 import msTransport from "../../assets/projects/ms_transport.png"
 import neapolisCar from "../../assets/projects/neapolis_car.png"
-import arduinoIcon from "../../assets/arduino.svg"
+import siameGprs from "../../assets/projects/siame_gprs.png"
 
 type ProjectItem = {
   title: string
@@ -45,12 +45,12 @@ const projects: ProjectItem[] = [
     link: "https://play.google.com/store/apps/details?id=com.neapolis_car.neapolis_car&pcampaignid=web_share",
   },
   {
-    title: "Server Room Alarm System",
-    category: "Embedded",
+    title: "SIAME – Remote Machine Monitoring over GPRS",
+    category: "Embedded · IoT — Internship (SIAME)",
     description:
-      "Alarm system for server rooms using Arduino, a SIM900 GSM module and motion sensors. Administrators receive real-time SMS notifications in case of unauthorized access.",
-    techs: ["Arduino", "SIM900", "Sensors", "PHP", "MySQL"],
-    icons: [arduinoIcon],
+      "Internship at SIAME (electrical equipment manufacturer). An Arduino Uno with a SIM900 GSM/GPRS module sends each injection press's temperature (DHT22) to a PHP/MySQL server, receives remote on/off commands, and a PIR sensor triggers SMS alerts for server-room intrusions. Rebuilt in 2026: non-blocking firmware, secure web dashboard with live charts and alarms, and a device simulator.",
+    techs: ["Arduino", "SIM900 GPRS", "DHT22", "PIR", "PHP 8", "MySQL", "Chart.js", "Python"],
+    image: siameGprs,
   },
 ]
 
