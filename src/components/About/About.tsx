@@ -1,5 +1,4 @@
 import { Container } from "./styles";
-import moutiasaad from "../../assets/photo.png";
 import springboot from "../../assets/spring-boot.svg";
 import flutter from "../../assets/flutter.svg";
 import django from "../../assets/django.svg";
