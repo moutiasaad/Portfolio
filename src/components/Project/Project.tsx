@@ -3,8 +3,7 @@ import externalLink from "../../assets/external-link.svg"
 import ScrollAnimation from "react-animate-on-scroll";
 import predictiveMaintenance from "../../assets/projects/predictive_maintenance.png"
 import msTransport from "../../assets/projects/ms_transport.png"
-import flutterIcon from "../../assets/flutter.svg"
-import djangoIcon from "../../assets/django.svg"
+import neapolisCar from "../../assets/projects/neapolis_car.png"
 import arduinoIcon from "../../assets/arduino.svg"
 
 type ProjectItem = {
@@ -32,7 +31,7 @@ const projects: ProjectItem[] = [
     title: "MS Transport – Moving & Freight Platform (Web + Mobile)",
     category: "Web & Mobile — Bachelor final-year project",
     description:
-      "Built from scratch for a moving company in France: customers estimate the volume of their furniture or goods, get an instant quote and book a date; admins validate requests, assign carriers and follow payments. The Flutter app adds Stripe payments and live carrier tracking on Google Maps. Redesigned in 2026.",
+      "Built from scratch for a moving company in France: customers estimate the volume of their furniture or goods, get an instant quote and book a date; admins validate requests, assign carriers and follow payments. The Flutter app adds Stripe payments and live carrier tracking on Google Maps. Web and Flutter apps redesigned in 2026.",
     techs: ["React", "Material UI", "Flutter", "Django REST", "MySQL", "Stripe", "Google Maps"],
     image: msTransport,
   },
@@ -42,7 +41,7 @@ const projects: ProjectItem[] = [
     description:
       "First mobile application of Neapolis Car, a car rental company, extending its reservation website. Clients can browse available cars, book a rental or a transfer service and follow their reservations. Published on Google Play.",
     techs: ["Flutter", "Django", "PostgreSQL"],
-    icons: [flutterIcon, djangoIcon],
+    image: neapolisCar,
     link: "https://play.google.com/store/apps/details?id=com.neapolis_car.neapolis_car&pcampaignid=web_share",
   },
   {
