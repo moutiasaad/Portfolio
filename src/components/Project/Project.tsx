@@ -2,7 +2,7 @@ import { Container } from "./styles";
 import externalLink from "../../assets/external-link.svg"
 import ScrollAnimation from "react-animate-on-scroll";
 import predictiveMaintenance from "../../assets/projects/predictive_maintenance.png"
-import reactIcon from "../../assets/react-icon.svg"
+import msTransport from "../../assets/projects/ms_transport.png"
 import flutterIcon from "../../assets/flutter.svg"
 import djangoIcon from "../../assets/django.svg"
 import arduinoIcon from "../../assets/arduino.svg"
@@ -29,12 +29,12 @@ const projects: ProjectItem[] = [
     featured: true,
   },
   {
-    title: "Web and Mobile Platform for Moving Company Management",
-    category: "Web & Mobile",
+    title: "MS Transport – Moving & Freight Platform (Web + Mobile)",
+    category: "Web & Mobile — Bachelor final-year project",
     description:
-      "Web platform and mobile application for a moving company: planning, payment and tracking of moves, carrier tracking, communication between customers and administrators, and real-time operation management.",
-    techs: ["React.js", "Flutter", "Django", "MySQL"],
-    icons: [reactIcon, flutterIcon, djangoIcon],
+      "Built from scratch for a moving company in France: customers estimate the volume of their furniture or goods, get an instant quote and book a date; admins validate requests, assign carriers and follow payments. The Flutter app adds Stripe payments and live carrier tracking on Google Maps. Redesigned in 2026.",
+    techs: ["React", "Material UI", "Flutter", "Django REST", "MySQL", "Stripe", "Google Maps"],
+    image: msTransport,
   },
   {
     title: "Neapolis Car – Car Rental Mobile App",
