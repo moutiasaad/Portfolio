@@ -4,6 +4,7 @@ import ScrollAnimation from "react-animate-on-scroll";
 import predictiveMaintenance from "../../assets/projects/predictive_maintenance.png"
 import msTransport from "../../assets/projects/ms_transport.png"
 import neapolisCar from "../../assets/projects/neapolis_car.png"
+import glowy from "../../assets/projects/glowy.png"
 import siameGprs from "../../assets/projects/siame_gprs.png"
 
 type ProjectItem = {
@@ -34,6 +35,15 @@ const projects: ProjectItem[] = [
       "Built from scratch for a moving company in France: customers estimate the volume of their furniture or goods, get an instant quote and book a date; admins validate requests, assign carriers and follow payments. The Flutter app adds Stripe payments and live carrier tracking on Google Maps. Web and Flutter apps redesigned in 2026.",
     techs: ["React", "Material UI", "Flutter", "Django REST", "MySQL", "Stripe", "Google Maps"],
     image: msTransport,
+  },
+  {
+    title: "Glowy – Cosmetics E-commerce Store + Admin Dashboard",
+    category: "Web — Freelance",
+    description:
+      "Online store for a Tunisian cosmetics brand: catalogue with categories, cart, checkout with or without an account, cash on delivery to all 24 governorates and order tracking. The admin dashboard follows orders from confirmation to delivery, manages products, photos and stock, and shows revenue and best sellers. Rebuilt in 2026: secured REST API (server-side totals, access control) and a new design.",
+    techs: ["React", "Material UI", "CoreUI", "Node.js", "Express", "Sequelize", "MySQL", "JWT"],
+    image: glowy,
+    link: "https://github.com/Youandme001/client",
   },
   {
     title: "Neapolis Car – Car Rental Mobile App",
