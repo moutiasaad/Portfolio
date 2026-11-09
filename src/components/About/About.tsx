@@ -23,7 +23,7 @@ export function About() {
         </ScrollAnimation>
         <ScrollAnimation animateIn="fadeInLeft" delay={0.1 * 1000}>
           <p>
-          Hi there! I'm Moutia, an embedded systems and IoT developer with a Professional Master's degree in Embedded and Mobile Systems (Mention Très Bien). I build complete solutions, from the sensor wired on the machine to the notification on the user's phone.
+          Hi there! I'm Moutia, an embedded systems and IoT developer with a Professional Master's degree in Embedded and Mobile Systems. I build complete solutions, from the sensor wired on the machine to the notification on the user's phone.
           </p>
         </ScrollAnimation>
         <ScrollAnimation animateIn="fadeInLeft" delay={0.2 * 1000} style={{ marginTop: "2rem", marginBottom: "2rem" }}>

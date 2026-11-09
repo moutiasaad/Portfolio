@@ -37,8 +37,32 @@ export const Container = styled.section`
       }
 
       .media{
+        position: relative;
         aspect-ratio: 16 / 9;
         background-color: #0b1120;
+        border: none;
+        padding: 0;
+        width: 100%;
+        cursor: pointer;
+        overflow: hidden;
+        .media-hint{
+          position: absolute;
+          right: 1.2rem;
+          bottom: 1.2rem;
+          padding: 0.6rem 1.4rem;
+          border-radius: 2rem;
+          background: var(--green);
+          color: #000;
+          font-weight: 700;
+          font-size: 1.3rem;
+          opacity: 0;
+          transform: translateY(0.6rem);
+          transition: 0.25s;
+        }
+        &:hover .media-hint, &:focus-visible .media-hint{
+          opacity: 1;
+          transform: none;
+        }
         img{
           width: 100%;
           height: 100%;
@@ -97,6 +121,19 @@ export const Container = styled.section`
 
       footer{
         margin-top: auto;
+        .details-btn{
+          margin-top: 1.8rem;
+          padding: 0;
+          border: none;
+          background: none;
+          color: var(--green);
+          font-weight: 700;
+          font-size: 1.5rem;
+          cursor: pointer;
+          &:hover{
+            text-decoration: underline;
+          }
+        }
         .tech-list{
           display: flex;
           align-items: center;
