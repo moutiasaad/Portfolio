@@ -23,6 +23,7 @@ import siame1 from "../../assets/projects/details/siame_1.jpg"
 import siame2 from "../../assets/projects/details/siame_2.jpg"
 import siame3 from "../../assets/projects/details/siame_3.jpg"
 import siameM1 from "../../assets/projects/details/siame_m1.jpg"
+import siamePrototype from "../../assets/projects/details/siame_prototype.jpg"
 import pfePrototype from "../../assets/projects/details/pfe_prototype.jpg"
 import pfeArchitecture from "../../assets/projects/details/pfe_architecture.jpg"
 import pfeSensors from "../../assets/projects/details/pfe_sensors.jpg"
@@ -241,6 +242,7 @@ export const projects: ProjectItem[] = [
         { label: "Tools", items: ["Python", "arduino-cli"] },
       ],
       gallery: [
+        { src: siamePrototype, caption: "Prototype wiring: Arduino Uno, SIM900 GPRS module, DHT22, PIR sensor, buzzer and machine relay" },
         { src: siame1, caption: "Supervision dashboard" },
         { src: siame2, caption: "Machine detail with 24-hour temperature chart" },
         { src: siame3, caption: "Alarms: intrusion and overheating" },
