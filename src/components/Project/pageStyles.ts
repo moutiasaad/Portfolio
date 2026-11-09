@@ -1,55 +1,25 @@
 import styled from "styled-components";
 
-export const Overlay = styled.div`
-  position: fixed;
-  inset: 0;
-  z-index: 2000;
-  background: rgba(10, 10, 10, 0.78);
-  backdrop-filter: blur(6px);
-  overflow-y: auto;
-  padding: 4rem 2rem;
-  animation: fadeIn 0.2s ease;
+export const Page = styled.main`
+  position: relative;
+  z-index: 2;
+  max-width: 112rem;
+  margin: 0 auto;
+  padding: 14rem 2rem 6rem;
+  color: #fff;
 
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-
-  .panel {
-    position: relative;
-    max-width: 112rem;
-    margin: 0 auto;
-    background: #1f1f1f;
-    color: #fff;
-    border: 1px solid rgba(35, 206, 107, 0.25);
-    border-radius: 1.6rem;
-    padding: 4rem;
-    box-shadow: 0 3rem 8rem rgba(0, 0, 0, 0.5);
-  }
-
-  .close {
-    position: absolute;
-    top: 1.6rem;
-    right: 1.6rem;
-    width: 4.2rem;
-    height: 4.2rem;
-    border-radius: 50%;
-    border: none;
-    background: rgba(255, 255, 255, 0.08);
-    color: inherit;
-    font-size: 2.8rem;
-    line-height: 1;
-    cursor: pointer;
-    transition: 0.2s;
-    &:hover {
-      background: var(--green);
-      color: #000;
-    }
+  .back {
+    display: inline-block;
+    margin-bottom: 2.4rem;
+    color: var(--green);
+    font-weight: 700;
+    font-size: 1.5rem;
+    text-decoration: none;
+    &:hover { text-decoration: underline; }
   }
 
   .head {
-    margin-bottom: 2.4rem;
-    padding-right: 4rem;
+    margin-bottom: 3.2rem;
     .category {
       font-size: 1.3rem;
       font-weight: 700;
@@ -57,10 +27,15 @@ export const Overlay = styled.div`
       text-transform: uppercase;
       letter-spacing: 0.1rem;
     }
-    h3 {
-      font-size: 3rem;
-      margin: 0.8rem 0 1.4rem;
-      line-height: 1.25;
+    h1 {
+      font-size: 4.2rem;
+      margin: 0.8rem 0 1.6rem;
+      line-height: 1.2;
+    }
+    .lead {
+      max-width: 80rem;
+      margin-bottom: 2.4rem;
+      color: rgba(255, 255, 255, 0.75);
     }
     .visit {
       display: inline-block;
@@ -86,15 +61,12 @@ export const Overlay = styled.div`
       justify-content: center;
       aspect-ratio: 16 / 10;
       img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
+        max-width: 100%;
+        max-height: 100%;
         display: block;
       }
     }
     .stage.mobile img {
-      width: auto;
-      height: 100%;
       padding: 1.6rem 0;
     }
     .nav {
@@ -159,7 +131,7 @@ export const Overlay = styled.div`
     gap: 4rem;
   }
 
-  h4 {
+  h2 {
     font-size: 1.4rem;
     text-transform: uppercase;
     letter-spacing: 0.12rem;
@@ -228,27 +200,50 @@ export const Overlay = styled.div`
     }
   }
 
-  html.light & {
-    background: rgba(240, 240, 240, 0.8);
-    .panel {
-      background: #fff;
-      color: var(--black);
-      box-shadow: 0 3rem 8rem rgba(0, 0, 0, 0.15);
+  .pager {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 6rem;
+    padding-top: 3rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    a {
+      display: block;
+      padding: 2rem 2.4rem;
+      border-radius: 1.2rem;
+      background: #2b2b2b;
+      color: inherit;
+      text-decoration: none;
+      font-size: 1.7rem;
+      font-weight: 600;
+      line-height: 1.4;
+      border: 1px solid transparent;
+      transition: 0.25s;
+      span {
+        display: block;
+        margin-bottom: 0.6rem;
+        font-size: 1.3rem;
+        color: var(--green);
+        text-transform: uppercase;
+        letter-spacing: 0.1rem;
+      }
+      &:hover { border-color: var(--green); transform: translateY(-3px); }
     }
-    .close { background: rgba(0, 0, 0, 0.06); }
-    p, .bullets li { color: #333; }
+    .next-project { text-align: right; }
+  }
+
+  html.light & {
+    color: var(--black);
+    .head .lead, p, .bullets li { color: #333; }
+    .pager { border-color: rgba(0, 0, 0, 0.1); a { background: #f1f1f1; } }
     .gallery .caption { color: #555; span { color: #888; } }
     .stack span { color: #777; }
   }
 
   @media (max-width: 860px) {
-    padding: 0;
-    .panel {
-      border-radius: 0;
-      min-height: 100%;
-      padding: 6rem 1.8rem 3rem;
-    }
-    .head h3 { font-size: 2.4rem; }
+    padding: 11rem 1.8rem 4rem;
+    .head h1 { font-size: 2.8rem; }
+    .pager { grid-template-columns: 1fr; .next-project { text-align: left; } }
     .columns { grid-template-columns: 1fr; gap: 0; }
     aside { margin-top: 2.4rem; }
   }

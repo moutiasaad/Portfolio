@@ -23,7 +23,13 @@ import siame1 from "../../assets/projects/details/siame_1.jpg"
 import siame2 from "../../assets/projects/details/siame_2.jpg"
 import siame3 from "../../assets/projects/details/siame_3.jpg"
 import siameM1 from "../../assets/projects/details/siame_m1.jpg"
-import siameHw from "../../assets/projects/details/siame_hw.jpg"
+import pfePrototype from "../../assets/projects/details/pfe_prototype.jpg"
+import pfeArchitecture from "../../assets/projects/details/pfe_architecture.jpg"
+import pfeSensors from "../../assets/projects/details/pfe_sensors.jpg"
+import pfeAiDiagnostic from "../../assets/projects/details/pfe_ai_diagnostic.jpg"
+import pfeKpiMobile from "../../assets/projects/details/pfe_kpi_mobile.jpg"
+import pfeConfusion from "../../assets/projects/details/pfe_confusion.jpg"
+import pfeRoc from "../../assets/projects/details/pfe_roc.jpg"
 
 export type Shot = { src: string; caption: string; mobile?: boolean }
 
@@ -80,7 +86,16 @@ export const projects: ProjectItem[] = [
         { label: "Backend", items: ["Node.js", "Express", "MongoDB", "JWT", "Firebase Cloud Messaging"] },
         { label: "Apps", items: ["React", "Flutter"] },
       ],
-      gallery: [{ src: predictiveMaintenance, caption: "Web dashboard, mobile app and the sensor box" }],
+      gallery: [
+        { src: predictiveMaintenance, caption: "Web dashboard and mobile app" },
+        { src: pfeArchitecture, caption: "System architecture: IoT units, central server, web and mobile apps" },
+        { src: pfePrototype, caption: "Prototype wiring: Raspberry Pi, DHT22 ×2, MPU6050, AMG8833 and SCT-013 current clamp" },
+        { src: pfeSensors, caption: "Live sensor values on a machine (web)" },
+        { src: pfeAiDiagnostic, caption: "AI diagnostic when creating an intervention" },
+        { src: pfeKpiMobile, caption: "Maintenance KPIs in the mobile app (MTTR, MTBF, availability)" },
+        { src: pfeConfusion, caption: "Random Forest: confusion matrix on the 5 failure causes + normal" },
+        { src: pfeRoc, caption: "XGBoost 24-hour risk: ROC curve (AUC 0.94)" },
+      ],
     },
   },
   {
@@ -226,7 +241,6 @@ export const projects: ProjectItem[] = [
         { label: "Tools", items: ["Python", "arduino-cli"] },
       ],
       gallery: [
-        { src: siameHw, caption: "Breadboard prototype: Arduino Uno, SIM900, DHT22 and PIR" },
         { src: siame1, caption: "Supervision dashboard" },
         { src: siame2, caption: "Machine detail with 24-hour temperature chart" },
         { src: siame3, caption: "Alarms: intrusion and overheating" },

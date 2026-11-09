@@ -43,6 +43,7 @@ export const Container = styled.section`
         border: none;
         padding: 0;
         width: 100%;
+        display: block;
         cursor: pointer;
         overflow: hidden;
         .media-hint{
@@ -122,6 +123,8 @@ export const Container = styled.section`
       footer{
         margin-top: auto;
         .details-btn{
+          display: inline-block;
+          text-decoration: none;
           margin-top: 1.8rem;
           padding: 0;
           border: none;

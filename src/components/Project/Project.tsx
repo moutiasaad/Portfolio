@@ -1,14 +1,10 @@
-import { useCallback, useState } from "react";
+import { Link } from "react-router-dom";
 import { Container } from "./styles";
 import externalLink from "../../assets/external-link.svg"
 import ScrollAnimation from "react-animate-on-scroll";
-import { projects, ProjectItem } from "./projects";
-import { ProjectDetail } from "./ProjectDetail";
+import { projects } from "./projects";
 
 export function Project() {
-  const [open, setOpen] = useState<ProjectItem | null>(null)
-  const close = useCallback(() => setOpen(null), [])
-
   return (
     <Container id="project">
       <h2>My Projects</h2>
@@ -20,10 +16,10 @@ export function Project() {
             className={project.featured ? "featured-wrapper" : undefined}
           >
             <div className={project.featured ? "project featured" : "project"}>
-              <button className="media" onClick={() => setOpen(project)} aria-label={`Details: ${project.title}`}>
+              <Link to={`/projects/${project.slug}`} className="media" aria-label={`Details: ${project.title}`}>
                 {project.image && <img src={project.image} alt={project.title} />}
                 <span className="media-hint">View details</span>
-              </button>
+              </Link>
               <div className="content">
                 <header>
                   <span className="category">{project.category}</span>
@@ -43,16 +39,15 @@ export function Project() {
                       <li key={tech}>{tech}</li>
                     ))}
                   </ul>
-                  <button className="details-btn" onClick={() => setOpen(project)}>
+                  <Link to={`/projects/${project.slug}`} className="details-btn">
                     View details →
-                  </button>
+                  </Link>
                 </footer>
               </div>
             </div>
           </ScrollAnimation>
         ))}
       </div>
-      {open && <ProjectDetail project={open} onClose={close} />}
     </Container>
   );
 }
