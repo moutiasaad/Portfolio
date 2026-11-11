@@ -13,6 +13,18 @@ import glowy6 from "../../assets/projects/details/glowy_6.jpg"
 import glowy7 from "../../assets/projects/details/glowy_7.jpg"
 import glowyM1 from "../../assets/projects/details/glowy_m1.jpg"
 import glowyM2 from "../../assets/projects/details/glowy_m2.jpg"
+import helloway from "../../assets/projects/helloway.png"
+import helloway1 from "../../assets/projects/details/helloway_1.jpg"
+import helloway2 from "../../assets/projects/details/helloway_2.jpg"
+import helloway3 from "../../assets/projects/details/helloway_3.jpg"
+import helloway4 from "../../assets/projects/details/helloway_4.jpg"
+import helloway5 from "../../assets/projects/details/helloway_5.jpg"
+import helloway6 from "../../assets/projects/details/helloway_6.jpg"
+import helloway7 from "../../assets/projects/details/helloway_7.jpg"
+import hellowayM1 from "../../assets/projects/details/helloway_m1.jpg"
+import hellowayM2 from "../../assets/projects/details/helloway_m2.jpg"
+import hellowayM3 from "../../assets/projects/details/helloway_m3.jpg"
+import hellowayM4 from "../../assets/projects/details/helloway_m4.jpg"
 import mst1 from "../../assets/projects/details/mst_1.jpg"
 import mst2 from "../../assets/projects/details/mst_2.jpg"
 import mst3 from "../../assets/projects/details/mst_3.jpg"
@@ -179,6 +191,55 @@ export const projects: ProjectItem[] = [
         { src: glowy7, caption: "Products and stock" },
         { src: glowyM1, caption: "Mobile: home", mobile: true },
         { src: glowyM2, caption: "Mobile: product", mobile: true },
+      ],
+    },
+  },
+  {
+    slug: "helloway",
+    title: "HelloWay – QR Ordering Platform for Restaurants & Cafés",
+    category: "Web & Mobile — Freelance",
+    description:
+      "Restaurant and café ordering platform: each table has a QR code, customers scan it to see the menu, order and call the waiter. Owners manage their establishment from a web dashboard (zones, tables, menu, waiters, reservations, stock, events) and staff follow orders and shifts in a mobile app.",
+    techs: ["Spring Boot", "MySQL", "JWT", "React", "Vite", "Flutter", "Firebase", "WebSocket"],
+    image: helloway,
+    link: "https://github.com/FPA-SEC-groupes",
+    linkLabel: "Source code",
+    details: {
+      context:
+        "Freelance project in a small team for HelloWay, a QR-table ordering service for restaurants and cafés in Tunisia. Three kinds of users: the platform admin, the restaurant owner and his waiters, and the customers at the table.",
+      role: "Spring Boot API security, the web dashboard for admins and restaurant owners, and the two Flutter apps (staff and customer).",
+      features: [
+        "Customer app: nearby places, scan the table QR code, menu by category, basket, order and follow its status",
+        "Presence check at the table by GPS or by the restaurant Wi-Fi before an order is accepted",
+        "Owner dashboard: establishment, zones and tables with printable QR codes, menu and products with photos",
+        "Waiters, shifts and days off; reservations to accept, refuse or assign to a table",
+        "Stock of raw materials with history, events and promotions",
+        "Staff app: orders per waiter in real time (WebSocket), push notifications, shift calendar",
+        "Admin: restaurant owners, account requests and restrictions",
+      ],
+      highlights: [
+        "Each owner can only reach his own establishment: ownership checked on the server for every request",
+        "QR codes carry a secret token per table; password change needs the current password and reset uses an e-mail code",
+        "Secrets kept out of the code (.env), roles and first admin created at start-up",
+        "Arabic, French and English, with right-to-left layout in Arabic",
+      ],
+      stack: [
+        { label: "Backend", items: ["Spring Boot", "Spring Security", "JWT", "MySQL", "WebSocket", "Firebase"] },
+        { label: "Web", items: ["React", "Vite"] },
+        { label: "Mobile", items: ["Flutter", "Provider", "Dio", "Firebase Messaging"] },
+      ],
+      gallery: [
+        { src: helloway1, caption: "Owner dashboard" },
+        { src: helloway2, caption: "Zones and tables" },
+        { src: helloway3, caption: "Table QR code" },
+        { src: helloway4, caption: "Menu and products" },
+        { src: helloway5, caption: "Reservations" },
+        { src: helloway6, caption: "Stock" },
+        { src: helloway7, caption: "Admin dashboard" },
+        { src: hellowayM1, caption: "Customer app: places", mobile: true },
+        { src: hellowayM2, caption: "Staff app: menu", mobile: true },
+        { src: hellowayM3, caption: "Staff app: shifts", mobile: true },
+        { src: hellowayM4, caption: "Staff app in Arabic", mobile: true },
       ],
     },
   },
