@@ -43,6 +43,19 @@ import pfeAiDiagnostic from "../../assets/projects/details/pfe_ai_diagnostic.jpg
 import pfeKpiMobile from "../../assets/projects/details/pfe_kpi_mobile.jpg"
 import pfeConfusion from "../../assets/projects/details/pfe_confusion.jpg"
 import pfeRoc from "../../assets/projects/details/pfe_roc.jpg"
+import pfeAlerts from "../../assets/projects/details/pfe_alerts.jpg"
+import pfeEpisode from "../../assets/projects/details/pfe_episode.jpg"
+import pfeImportance from "../../assets/projects/details/pfe_importance.jpg"
+import pfeThreshold from "../../assets/projects/details/pfe_threshold.jpg"
+import visualInspection from "../../assets/projects/visual_inspection.png"
+import inspection1 from "../../assets/projects/details/inspection_1.jpg"
+import inspection2 from "../../assets/projects/details/inspection_2.jpg"
+import inspection3 from "../../assets/projects/details/inspection_3.jpg"
+import inspection4 from "../../assets/projects/details/inspection_4.jpg"
+import inspection5 from "../../assets/projects/details/inspection_5.jpg"
+import inspection6 from "../../assets/projects/details/inspection_6.jpg"
+import inspectionM1 from "../../assets/projects/details/inspection_m1.jpg"
+import inspectionM2 from "../../assets/projects/details/inspection_m2.jpg"
 
 export type Shot = { src: string; caption: string; mobile?: boolean }
 
@@ -68,46 +81,86 @@ export type ProjectItem = {
 
 export const projects: ProjectItem[] = [
   {
-    slug: "predictive-maintenance",
-    title: "Intelligent Predictive Maintenance System for Industrial Machines",
-    category: "IoT · AI · Web & Mobile — Final-year project",
+    slug: "siame",
+    title: "SIAME – Remote Machine Monitoring over GPRS",
+    category: "Embedded · IoT — Internship (SIAME)",
     description:
-      "Final-year project (Professional Master). A Raspberry Pi 5 with 5 sensors (temperature, vibration, thermal camera, current) monitors wire processing machines. A Random Forest model identifies the probable failure cause and XGBoost estimates the 24-hour failure risk. Alerts reach the maintenance team in real time on a React web dashboard and a Flutter mobile app, with interventions, preventive checklists and MTBF / MTTR indicators.",
-    techs: ["Raspberry Pi", "Python", "scikit-learn", "XGBoost", "FastAPI", "Node.js", "MongoDB", "React", "Flutter"],
-    image: predictiveMaintenance,
-    featured: true,
+      "Internship at SIAME (electrical equipment manufacturer). An Arduino Uno with a SIM900 GSM/GPRS module sends each injection press's temperature (DHT22) to a PHP/MySQL server, receives remote on/off commands, and a PIR sensor triggers SMS alerts for server-room intrusions.",
+    techs: ["Arduino", "SIM900 GPRS", "DHT22", "PIR", "PHP 8", "MySQL", "Chart.js", "Python"],
+    image: siameGprs,
+    link: "https://github.com/moutiasaad/siame",
+    linkLabel: "Source code",
     details: {
       context:
-        "Six-month final-year internship in a wire harness factory in Tunisia. Maintenance of the Komax wire processing machines (Alpha 433 H and Gamma 333 PC) was purely corrective and tracked on paper. The goal was to see failures coming and to give the maintenance team one tool for alerts, interventions and daily checks.",
-      role: "Whole project, alone: hardware, firmware scripts, machine learning, REST API, web dashboard and mobile app.",
+        "Second-year internship at SIAME, a manufacturer of electrical equipment in Grombalia. The injection presses had no remote supervision, and the server room had no intrusion alarm.",
+      role: "Electronics prototype, Arduino firmware and the PHP web application.",
       features: [
-        "Raspberry Pi 5 on the machine: 2 DHT22 temperature sensors, MPU6050 vibration, AMG8833 thermal camera and SCT-013 current clamp, with a local buffer when the network drops",
-        "AI service every 5 minutes on a 2-hour window: Random Forest gives the probable cause, XGBoost the risk of failure within 24 hours",
-        "Alerts pushed to the right person (line leader, then maintenance manager), approval of an alert into a predictive intervention",
-        "Interventions, preventive checklists with photo evidence, daily follow-up sheet, maintenance calendar",
-        "MTBF / MTTR indicators and reliability reports per machine",
-        "Sensor and Raspberry Pi watchdog: offline Pi or silent sensor raises its own alert",
+        "Arduino Uno + SIM900: periodic GPRS request with temperature and humidity, the reply carries the on/off command for the machine relay",
+        "PIR sensor in the server room: SMS to the person in charge, buzzer and an intrusion alarm on the dashboard",
+        "Web dashboard: machines online, live temperatures, 24-hour charts with the alarm threshold",
+        "Remote start / stop with a log of who sent each command",
+        "Alarm list with acknowledgement, user and machine administration",
+        "Python simulator to test the server without the board",
       ],
       highlights: [
-        "Random Forest: macro F1 0.85 on 5 failure causes, validated with week-blocked cross-validation",
-        "XGBoost 24-hour risk: AUC 0.94, all 69 test failures announced, median 19.5 h in advance, about 1 false alert per week (6.5 with simple thresholds)",
-        "Real prototype tested on an Alpha 433 H machine",
+        "Non-blocking firmware: AT commands wait for the modem replies instead of fixed delays",
+        "Each board authenticates with a device key; the server rejects out-of-range readings",
       ],
       stack: [
-        { label: "IoT", items: ["Raspberry Pi 5", "Python", "I²C", "systemd"] },
-        { label: "AI", items: ["scikit-learn", "XGBoost", "pandas", "FastAPI"] },
-        { label: "Backend", items: ["Node.js", "Express", "MongoDB", "JWT", "Firebase Cloud Messaging"] },
-        { label: "Apps", items: ["React", "Flutter"] },
+        { label: "Embedded", items: ["Arduino Uno", "SIM900 GSM/GPRS", "DHT22", "PIR", "Relay"] },
+        { label: "Web", items: ["PHP 8", "MySQL", "Chart.js"] },
+        { label: "Tools", items: ["Python", "arduino-cli"] },
       ],
       gallery: [
-        { src: predictiveMaintenance, caption: "Web dashboard and mobile app" },
-        { src: pfeArchitecture, caption: "System architecture: IoT units, central server, web and mobile apps" },
-        { src: pfePrototype, caption: "Prototype wiring: Raspberry Pi, DHT22 ×2, MPU6050, AMG8833 and SCT-013 current clamp" },
-        { src: pfeSensors, caption: "Live sensor values on a machine (web)" },
-        { src: pfeAiDiagnostic, caption: "AI diagnostic when creating an intervention" },
-        { src: pfeKpiMobile, caption: "Maintenance KPIs in the mobile app (MTTR, MTBF, availability)" },
-        { src: pfeConfusion, caption: "Random Forest: confusion matrix on the 5 failure causes + normal" },
-        { src: pfeRoc, caption: "XGBoost 24-hour risk: ROC curve (AUC 0.94)" },
+        { src: siamePrototype, caption: "Prototype wiring: Arduino Uno, SIM900 GPRS module, DHT22, PIR sensor, buzzer and machine relay" },
+        { src: siame1, caption: "Supervision dashboard" },
+        { src: siame2, caption: "Machine detail with 24-hour temperature chart" },
+        { src: siame3, caption: "Alarms: intrusion and overheating" },
+        { src: siameM1, caption: "Mobile view", mobile: true },
+      ],
+    },
+  },
+  {
+    slug: "visual-inspection",
+    title: "AI Visual Quality Inspection for Injection-Molded Parts",
+    category: "AI · Embedded · Web — Makeathon (Orange Digital Center)",
+    description:
+      "Makeathon project. A camera on a Raspberry Pi at the output of a plastic injection press photographs every terminal block. A two-stage AI first decides good or defective, then names the defect. Results reach a Django API and a web dashboard where the quality team follows the scrap rate of each press and decides on the parts the AI is unsure about.",
+    techs: ["Raspberry Pi", "Python", "TensorFlow Lite", "MobileNetV2", "Django REST", "React", "Vite"],
+    image: visualInspection,
+    details: {
+      context:
+        "Inter-ODC Makeathon organised by Orange Digital Center. In plastic injection workshops, parts are still checked by eye at the press output, and defects such as burn marks or bubbles slip through on long shifts. The prototype targets terminal blocks, a typical part made on injection presses.",
+      role: "AI model and training, inspection script for the Raspberry Pi, Django REST API and web dashboard.",
+      features: [
+        "Raspberry Pi with a camera at the press output; the inspection runs on the Pi with TensorFlow Lite",
+        "Stage 1, good or defective: anomaly detection learned from photos of good parts only (PatchCore idea on MobileNetV2 features), so it does not need many photos of defects",
+        "Stage 2, defect type: MobileNetV2 transfer learning on a zoom of the most suspicious zone found by stage 1",
+        "Results the AI is unsure about are flagged «to check»: the operator sees the photo and decides",
+        "Dashboard: parts inspected per day, scrap rate per press, defect types, full history with photos",
+        "Device API protected by a key; each inspection is stored with its photo",
+      ],
+      highlights: [
+        "Decision threshold chosen by cost: a defective part let through counts ten times more than a good part rejected",
+        "Train / test split grouped by part, so photos of the same part never end up on both sides",
+        "The same .tflite models run on the PC and on the Raspberry Pi",
+      ],
+      stack: [
+        { label: "AI", items: ["TensorFlow / Keras", "MobileNetV2", "TensorFlow Lite", "scikit-learn"] },
+        { label: "Embedded", items: ["Raspberry Pi", "Pi Camera", "Python"] },
+        { label: "Backend", items: ["Django REST Framework", "Token auth", "SQLite"] },
+        { label: "Web", items: ["React", "Vite", "Recharts"] },
+      ],
+      gallery: [
+        { src: visualInspection, caption: "Quality dashboard, part review and mobile view" },
+        { src: inspection1, caption: "Dashboard: inspections per day, scrap rate per press and defect types" },
+        { src: inspection4, caption: "A part the AI is unsure about: the operator sees the photo and decides" },
+        { src: inspection3, caption: "Inspection history with photos and filters" },
+        { src: inspection2, caption: "Press detail: daily parts, defects and history" },
+        { src: inspection5, caption: "Presses with their scrap rate" },
+        { src: inspection6, caption: "Sign-in page" },
+        { src: inspectionM1, caption: "Mobile: dashboard", mobile: true },
+        { src: inspectionM2, caption: "Mobile: presses", mobile: true },
       ],
     },
   },
@@ -147,6 +200,34 @@ export const projects: ProjectItem[] = [
         { src: mstM1, caption: "Mobile: quote", mobile: true },
         { src: mstM2, caption: "Mobile: quote result", mobile: true },
       ],
+    },
+  },
+  {
+    slug: "neapolis-car",
+    title: "Neapolis Car – Car Rental Mobile App",
+    category: "Mobile",
+    description:
+      "First mobile application of Neapolis Car, a car rental company, extending its reservation website. Clients can browse available cars, book a rental or a transfer service and follow their reservations. Published on Google Play.",
+    techs: ["Flutter", "Django", "PostgreSQL"],
+    image: neapolisCar,
+    link: "https://play.google.com/store/apps/details?id=com.neapolis_car.neapolis_car&pcampaignid=web_share",
+    linkLabel: "Google Play",
+    details: {
+      context:
+        "Neapolis Car rents cars and offers transfers and excursions in Tunisia. Reservations were only possible on the website; the company wanted a mobile app connected to the same backend.",
+      role: "Flutter client app: screens, API integration with the existing Django backend, publication on Google Play.",
+      features: [
+        "Browse available cars with details and prices",
+        "Book a rental for given dates, or a transfer service",
+        "Account creation and login",
+        "Follow and manage reservations",
+      ],
+      highlights: ["Live product published on Google Play"],
+      stack: [
+        { label: "Mobile", items: ["Flutter", "Dart"] },
+        { label: "Backend", items: ["Django", "PostgreSQL"] },
+      ],
+      gallery: [{ src: neapolisCar, caption: "Reservation, car list, car details and registration screens" }],
     },
   },
   {
@@ -244,70 +325,50 @@ export const projects: ProjectItem[] = [
     },
   },
   {
-    slug: "neapolis-car",
-    title: "Neapolis Car – Car Rental Mobile App",
-    category: "Mobile",
+    slug: "predictive-maintenance",
+    title: "Intelligent Predictive Maintenance System for Industrial Machines",
+    category: "IoT · AI · Web & Mobile — Final-year project",
     description:
-      "First mobile application of Neapolis Car, a car rental company, extending its reservation website. Clients can browse available cars, book a rental or a transfer service and follow their reservations. Published on Google Play.",
-    techs: ["Flutter", "Django", "PostgreSQL"],
-    image: neapolisCar,
-    link: "https://play.google.com/store/apps/details?id=com.neapolis_car.neapolis_car&pcampaignid=web_share",
-    linkLabel: "Google Play",
+      "Final-year project (Professional Master). A Raspberry Pi 5 with 5 sensors (temperature, vibration, thermal camera, current) monitors wire processing machines. A Random Forest model identifies the probable failure cause and XGBoost estimates the 24-hour failure risk. Alerts reach the maintenance team in real time on a React web dashboard and a Flutter mobile app, with interventions, preventive checklists and MTBF / MTTR indicators.",
+    techs: ["Raspberry Pi", "Python", "scikit-learn", "XGBoost", "FastAPI", "Node.js", "MongoDB", "React", "Flutter"],
+    image: predictiveMaintenance,
+    featured: true,
     details: {
       context:
-        "Neapolis Car rents cars and offers transfers and excursions in Tunisia. Reservations were only possible on the website; the company wanted a mobile app connected to the same backend.",
-      role: "Flutter client app: screens, API integration with the existing Django backend, publication on Google Play.",
+        "Six-month final-year internship in a wire harness factory in Tunisia. Maintenance of the Komax wire processing machines (Alpha 433 H and Gamma 333 PC) was purely corrective and tracked on paper. The goal was to see failures coming and to give the maintenance team one tool for alerts, interventions and daily checks.",
+      role: "Whole project, alone: hardware, firmware scripts, machine learning, REST API, web dashboard and mobile app.",
       features: [
-        "Browse available cars with details and prices",
-        "Book a rental for given dates, or a transfer service",
-        "Account creation and login",
-        "Follow and manage reservations",
-      ],
-      highlights: ["Live product published on Google Play"],
-      stack: [
-        { label: "Mobile", items: ["Flutter", "Dart"] },
-        { label: "Backend", items: ["Django", "PostgreSQL"] },
-      ],
-      gallery: [{ src: neapolisCar, caption: "Reservation, car list, car details and registration screens" }],
-    },
-  },
-  {
-    slug: "siame",
-    title: "SIAME – Remote Machine Monitoring over GPRS",
-    category: "Embedded · IoT — Internship (SIAME)",
-    description:
-      "Internship at SIAME (electrical equipment manufacturer). An Arduino Uno with a SIM900 GSM/GPRS module sends each injection press's temperature (DHT22) to a PHP/MySQL server, receives remote on/off commands, and a PIR sensor triggers SMS alerts for server-room intrusions.",
-    techs: ["Arduino", "SIM900 GPRS", "DHT22", "PIR", "PHP 8", "MySQL", "Chart.js", "Python"],
-    image: siameGprs,
-    link: "https://github.com/moutiasaad/siame",
-    linkLabel: "Source code",
-    details: {
-      context:
-        "Second-year internship at SIAME, a manufacturer of electrical equipment in Grombalia. The injection presses had no remote supervision, and the server room had no intrusion alarm.",
-      role: "Electronics prototype, Arduino firmware and the PHP web application.",
-      features: [
-        "Arduino Uno + SIM900: periodic GPRS request with temperature and humidity, the reply carries the on/off command for the machine relay",
-        "PIR sensor in the server room: SMS to the person in charge, buzzer and an intrusion alarm on the dashboard",
-        "Web dashboard: machines online, live temperatures, 24-hour charts with the alarm threshold",
-        "Remote start / stop with a log of who sent each command",
-        "Alarm list with acknowledgement, user and machine administration",
-        "Python simulator to test the server without the board",
+        "Raspberry Pi 5 on the machine: 2 DHT22 temperature sensors, MPU6050 vibration, AMG8833 thermal camera and SCT-013 current clamp, with a local buffer when the network drops",
+        "AI service every 5 minutes on a 2-hour window: Random Forest gives the probable cause, XGBoost the risk of failure within 24 hours",
+        "Alerts pushed to the right person (line leader, then maintenance manager), approval of an alert into a predictive intervention",
+        "Interventions, preventive checklists with photo evidence, daily follow-up sheet, maintenance calendar",
+        "MTBF / MTTR indicators and reliability reports per machine",
+        "Sensor and Raspberry Pi watchdog: offline Pi or silent sensor raises its own alert",
       ],
       highlights: [
-        "Non-blocking firmware: AT commands wait for the modem replies instead of fixed delays",
-        "Each board authenticates with a device key; the server rejects out-of-range readings",
+        "Random Forest: macro F1 0.85 on 5 failure causes, validated with week-blocked cross-validation",
+        "XGBoost 24-hour risk: AUC 0.94, all 69 test failures announced, median 19.5 h in advance, about 1 false alert per week (6.5 with simple thresholds)",
+        "Real prototype tested on an Alpha 433 H machine",
       ],
       stack: [
-        { label: "Embedded", items: ["Arduino Uno", "SIM900 GSM/GPRS", "DHT22", "PIR", "Relay"] },
-        { label: "Web", items: ["PHP 8", "MySQL", "Chart.js"] },
-        { label: "Tools", items: ["Python", "arduino-cli"] },
+        { label: "IoT", items: ["Raspberry Pi 5", "Python", "I²C", "systemd"] },
+        { label: "AI", items: ["scikit-learn", "XGBoost", "pandas", "FastAPI"] },
+        { label: "Backend", items: ["Node.js", "Express", "MongoDB", "JWT", "Firebase Cloud Messaging"] },
+        { label: "Apps", items: ["React", "Flutter"] },
       ],
       gallery: [
-        { src: siamePrototype, caption: "Prototype wiring: Arduino Uno, SIM900 GPRS module, DHT22, PIR sensor, buzzer and machine relay" },
-        { src: siame1, caption: "Supervision dashboard" },
-        { src: siame2, caption: "Machine detail with 24-hour temperature chart" },
-        { src: siame3, caption: "Alarms: intrusion and overheating" },
-        { src: siameM1, caption: "Mobile view", mobile: true },
+        { src: predictiveMaintenance, caption: "Web dashboard and mobile app" },
+        { src: pfeArchitecture, caption: "System architecture: IoT units, central server, web and mobile apps" },
+        { src: pfePrototype, caption: "Prototype wiring: Raspberry Pi, DHT22 ×2, MPU6050, AMG8833 and SCT-013 current clamp" },
+        { src: pfeSensors, caption: "Live sensor values on a machine (web)" },
+        { src: pfeAlerts, caption: "AI alerts and failure predictions, confirmed or marked as false alerts" },
+        { src: pfeAiDiagnostic, caption: "AI diagnostic when creating an intervention" },
+        { src: pfeKpiMobile, caption: "Maintenance KPIs in the mobile app (MTTR, MTBF, availability)" },
+        { src: pfeConfusion, caption: "Random Forest: confusion matrix on the 5 failure causes + normal" },
+        { src: pfeRoc, caption: "XGBoost 24-hour risk: ROC curve (AUC 0.94)" },
+        { src: pfeThreshold, caption: "XGBoost: precision and recall by threshold, with the warning (60 %) and critical (80 %) levels" },
+        { src: pfeImportance, caption: "Which sensors the models rely on most" },
+        { src: pfeEpisode, caption: "A motor overload episode seen by the sensors (red = failure in progress)" },
       ],
     },
   },

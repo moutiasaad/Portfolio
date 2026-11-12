@@ -2,16 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://moutiabensaad.vercel.app/</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://moutiabensaad.vercel.app/projects/predictive-maintenance</loc>
-    <lastmod>2026-11-09</lastmod>
+    <loc>https://moutiabensaad.vercel.app/projects/siame</loc>
+    <lastmod>2026-11-12</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moutiabensaad.vercel.app/projects/visual-inspection</loc>
+    <lastmod>2026-11-12</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://moutiabensaad.vercel.app/projects/ms-transport</loc>
+    <lastmod>2026-11-09</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://moutiabensaad.vercel.app/projects/neapolis-car</loc>
     <lastmod>2026-11-09</lastmod>
     <priority>0.8</priority>
   </url>
@@ -26,13 +36,8 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://moutiabensaad.vercel.app/projects/neapolis-car</loc>
-    <lastmod>2026-11-09</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://moutiabensaad.vercel.app/projects/siame</loc>
-    <lastmod>2026-11-09</lastmod>
+    <loc>https://moutiabensaad.vercel.app/projects/predictive-maintenance</loc>
+    <lastmod>2026-11-12</lastmod>
     <priority>0.8</priority>
   </url>
 </urlset>
