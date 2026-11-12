@@ -24,7 +24,9 @@ import helloway7 from "../../assets/projects/details/helloway_7.jpg"
 import hellowayM1 from "../../assets/projects/details/helloway_m1.jpg"
 import hellowayM2 from "../../assets/projects/details/helloway_m2.jpg"
 import hellowayM3 from "../../assets/projects/details/helloway_m3.jpg"
-import hellowayM4 from "../../assets/projects/details/helloway_m4.jpg"
+import hellowayM5 from "../../assets/projects/details/helloway_m5.jpg"
+import helloway8 from "../../assets/projects/details/helloway_8.jpg"
+import helloway9 from "../../assets/projects/details/helloway_9.jpg"
 import mst1 from "../../assets/projects/details/mst_1.jpg"
 import mst2 from "../../assets/projects/details/mst_2.jpg"
 import mst3 from "../../assets/projects/details/mst_3.jpg"
@@ -164,16 +166,18 @@ export const projects: ProjectItem[] = [
       ],
       gallery: [
         { src: helloway1, caption: "Owner dashboard" },
+        { src: helloway4, caption: "Menu: pizzas with product photos" },
+        { src: helloway8, caption: "Menu: main dishes" },
+        { src: helloway9, caption: "Menu: coffees" },
         { src: helloway2, caption: "Zones and tables" },
         { src: helloway3, caption: "Table QR code" },
-        { src: helloway4, caption: "Menu and products" },
         { src: helloway5, caption: "Reservations" },
         { src: helloway6, caption: "Stock" },
         { src: helloway7, caption: "Admin dashboard" },
+        { src: hellowayM2, caption: "Staff app: menu by category", mobile: true },
+        { src: hellowayM5, caption: "Staff app: salads, pizzas and desserts", mobile: true },
         { src: hellowayM1, caption: "Customer app: places", mobile: true },
-        { src: hellowayM2, caption: "Staff app: menu", mobile: true },
         { src: hellowayM3, caption: "Staff app: shifts", mobile: true },
-        { src: hellowayM4, caption: "Staff app in Arabic", mobile: true },
       ],
     },
   },
